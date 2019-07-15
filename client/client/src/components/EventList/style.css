@@ -1,0 +1,14 @@
+img {
+    height: 25%;
+    width:25%;
+    
+}
+
+h5 {
+    display: inline;
+}
+
+#save-btn {
+    float: right;
+}
+
