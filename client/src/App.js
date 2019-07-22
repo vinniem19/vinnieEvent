@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
 import Search from './components/Search';
+import Saved from './pages/Saved';
+import CatholicResources from './pages/CatholicResources';
+import CatholicApps from './pages/CatholicApps';
 // import { withAuth } from '@okta/okta-react';
 import './App.css';
 
@@ -38,31 +41,21 @@ export default class App extends Component {
   
 render() {
   return(
-  
+  <Router>
     <div className="App">
 
     {/* user login */}
-
-      <Header />
-      <Navbar />
-      {/* <Events /> */}
-           <Search />
- {/*{this.state.eventDetail.map(eventDetails => (
-              <Form
-            eventTitle={eventDetails.title}
-            eventImg={eventDetails.eventImg} 
-            eventStart={eventDetails.eventStartTime}
-            eventEnd={eventDetails.eventEndTime}
-            eventDescription={eventDetails.eventDescription} 
-            key={train.id}
-            
-            />
-            ))
-          }
-            <EventList />  
-      </Events>*/}
+      
+      <Switch>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/search' component={Search} />
+      <Route exact path='/saved' component={Saved} />
+      <Route exact path='/catholicResources' component={CatholicResources} />
+      <Route exact path='/catholicApps' component={CatholicApps} />
+      </Switch>
+ 
     </div>
-    
+    </Router>
   );
 
 };
