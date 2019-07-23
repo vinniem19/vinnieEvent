@@ -13,8 +13,8 @@ function ImgCard(props) {
                         </div>
                         <div className="card-content">
                             <ul>
-                                <li>Author</li>
-                                <li>Speaker</li>
+                                <li>{props.textp1}</li>
+                                <li>{props.textp2}</li>
                                 <li> The website for more is: <a href={props.url}>{props.company}</a></li>
                             </ul>
                         </div>

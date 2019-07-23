@@ -1,14 +1,15 @@
 import axios from 'axios';
-const key = process.env.TOKEN;
+// const key = process.env.TOKEN;
 export default {
 
     // Getting events from EventBrite api
 
     getEvents: function(q) {
-        return axios.get(`https://www.eventbriteapi.com/v3/events/search/?q=catholic&location.address=${q}&location.within=90mi&expand=event.venue.name&token=${key}`)
-    },
-    // return axios.get('/api/eventbrite/search', {params: {q: 'catholic+location.address=' + q + '&location.within=90mi'} });
+    //     return axios.get(`https://www.eventbriteapi.com/v3/events/search/?q=catholic&location.address=${q}&location.within=90mi&expand=event.venue.name&token=${key}`)
+    // },
+     return axios.get('/api/ebapi', {params: {q} });
     //get all saved events
+    },
 
     getSavedEvents: function() {
         return axios.get('/api/events');

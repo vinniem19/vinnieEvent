@@ -27,10 +27,12 @@ export default class Search extends Component {
 
     getEvents = () => {
         API.getEvents(this.state.q)
+
         .then(res => 
+            {console.log(res)
             this.setState({
-                results: res.data.events
-            })
+                results: res.data
+            })}
             ).catch(() =>
             this.setState({
                 results: [],
@@ -45,9 +47,11 @@ export default class Search extends Component {
     };
 
     handleEventSave = id => {
-        console.log("Clicked Save btn");
+        console.log("clicked");
         
-        const event = this.state.events.find(event => event.id === id);
+        const event = this.state.results.find(event => event.id === id);
+        console.log(event);
+        
     API.saveEvent({
                         eventId:event.id,
                         eventTitle: event.name.text,
@@ -96,7 +100,7 @@ export default class Search extends Component {
                         eventEnd={event.end.local}
                         eventDescription={event.description.text}
                         key={event.id}
-                        handleEventSave={this.handleEventSave(this.id)}
+                        handleEventSave={this.handleEventSave}
                         
                           />
             ))}

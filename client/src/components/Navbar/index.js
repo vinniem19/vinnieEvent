@@ -11,6 +11,7 @@ function Navbar() {
                     <li><a href="/search">Search Events</a></li>
                     <li><a href="/saved">Saved Events</a></li>
                     <li><a href="/catholicResources">Catholic Resources</a></li>
+                    <li><a href="/catholicApps">Catholic Apps</a></li>
                 </ul>
         </div>
   </nav>

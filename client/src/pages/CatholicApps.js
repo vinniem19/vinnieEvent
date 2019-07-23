@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import ImgCard from '../components/ImgCard';
-import apps from '../apps';
+import apps from '../apps.js';
 import { Row } from '../components/Grid';
 import './style.css'
 class CatholicApps extends Component {
@@ -18,7 +18,8 @@ constructor(props){
 <div>
     <Header />
     <Navbar />
-    <h1>Catholic Resources</h1>
+    <h1>Catholic Apps for Everyday Life</h1>
+    <h2>(put them on your mobile device today)</h2>
     <Row>
         <div className='cath-cards'>
             {this.state.apps.map(cathapps => (
@@ -26,7 +27,8 @@ constructor(props){
         name={cathapps.name}
         image={cathapps.img} 
         url={cathapps.url}
-        company={cathapps.company} />
+        company={cathapps.company} 
+        />
         ))}
         </div>
         </Row> 

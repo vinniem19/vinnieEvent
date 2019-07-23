@@ -26,7 +26,9 @@ constructor(props){
         name={cr.name}
         image={cr.img} 
         url={cr.url}
-        company={cr.company} />
+        company={cr.company} 
+        textp1={cr.text1}
+        textp2={cr.text2}/>
         ))}
         </div>
         </Row> 
