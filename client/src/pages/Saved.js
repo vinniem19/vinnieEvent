@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import retreat from '../images/retreat.jpg';
+// import retreat from '../images/retreat.jpg';
 // import Navbar from '../components/Navbar';
 // import ImgCard from '../components/ImgCard';
 import Card from '../components/Card';
@@ -22,6 +22,7 @@ class Saved extends Component {
                 events: res.data
             })
             ).catch(err => console.log(err));
+            console.log(this.state.events)
     };
 
     handleBookDelete = id => {
@@ -45,11 +46,11 @@ class Saved extends Component {
                               this.state.events.map((event => (
                     <EventList
                         eventId={event.id}
-                        eventTitle={event.name.text}
-                        eventImg={(event.logo === null) ? retreat : event.logo.url}
-                        eventStart={event.start.local}
-                        eventEnd={event.end.local}
-                        eventDescription={event.description.text}
+                        eventTitle={event.eventTitle}
+                        eventImg={event.eventImg}
+                        eventStart={event.eventStart}
+                        eventEnd={event.eventEnd}
+                        eventDescription={event.eventDescription}
                         key={event.id}
                         Button={() => (
                             <button

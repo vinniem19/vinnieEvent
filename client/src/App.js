@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Search from './components/Search';
 import Saved from './pages/Saved';
 import CatholicResources from './pages/CatholicResources';
@@ -52,6 +53,7 @@ render() {
       <Route exact path='/saved' component={Saved} />
       <Route exact path='/catholicResources' component={CatholicResources} />
       <Route exact path='/catholicApps' component={CatholicApps} />
+      <Route exact path='/login' component={Login} />
       </Switch>
  
     </div>
