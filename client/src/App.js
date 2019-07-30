@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {Security, SecureRoute, ImplicitCallback} from '@okta/okta-react';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Protected from './components/Protected';
 import Search from './components/Search';
 import Saved from './pages/Saved';
 import CatholicResources from './pages/CatholicResources';
@@ -9,7 +11,9 @@ import CatholicApps from './pages/CatholicApps';
 // import { withAuth } from '@okta/okta-react';
 import './App.css';
 
-
+function onAuthRequired({history}) {
+  history.push('./login');
+}
 
 
 export default class App extends Component {
@@ -38,24 +42,30 @@ export default class App extends Component {
   //   this.checkAuthentication();
   // }
 
+  
 
   
 render() {
   return(
   <Router>
     <div className="App">
-
+    <Security issuer='https://dev-211305.okta.com/oauth2/default'
+    client_id='0oawuc9q9FRCUeHFi356'
+    redirect_uri={window.location.origin + '/implicit/callback'}
+    onAuthRequired={onAuthRequired} >
     {/* user login */}
       
       <Switch>
       <Route exact path='/' component={Home} />
+      <SecureRoute path='/protected' component={Protected} />
+      <Route path='/login' render={() => <Login baseUrl='https://dev-211305.okta.com}' /> } />      {/* <Route exact path='/login' component={Login} /> */}
+      <Route path='/implicit/callback' component={ImplicitCallback} />
       <Route exact path='/search' component={Search} />
       <Route exact path='/saved' component={Saved} />
       <Route exact path='/catholicResources' component={CatholicResources} />
       <Route exact path='/catholicApps' component={CatholicApps} />
-      <Route exact path='/login' component={Login} />
-      </Switch>
- 
+     </Switch>
+      </Security>
     </div>
     </Router>
   );

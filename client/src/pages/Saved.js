@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import retreat from '../images/retreat.jpg';
-// import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 // import ImgCard from '../components/ImgCard';
 import Card from '../components/Card';
 import EventList from '../components/EventList';
@@ -25,13 +25,15 @@ class Saved extends Component {
             console.log(this.state.events)
     };
 
-    handleBookDelete = id => {
-        API.deleteBook(id).then(res => this.getSavedEvents());
+    handleEventDelete = id => {
+        API.deleteEvent(id).then(res => this.getSavedEvents());
     };
 
     render() {
         return(
-            <div class="container">
+            <div>
+                <Header />
+                <Navbar />
             <div class='row'>
                 <div class='col-md-12'>
                     <h1>Catholic Events Saved</h1>
@@ -54,7 +56,7 @@ class Saved extends Component {
                         key={event.id}
                         Button={() => (
                             <button
-                            onClick={() => this.handleEventDelete(event._id)}
+                            onClick={() => this.handleEventDelete(event.id)}
                             class='btn btn-danger ml-2'
                             >
                                 Delete

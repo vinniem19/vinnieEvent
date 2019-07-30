@@ -1,53 +1,67 @@
+// src/LoginForm.js
+
 import React, { Component } from 'react';
-import Header from '../components/Header';
-import Navbar from '../components/Navbar';
-// import Search from '../components/Search';
-// import { withAuth } from '@okta/okta-react';
-// import './App.css';
+import OktaAuth from '@okta/okta-auth-js';
+import { withAuth } from '@okta/okta-react';
 
+export default withAuth(class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sessionToken: null,
+      username: '',
+      password: ''
+    }
 
+    this.oktaAuth = new OktaAuth({ url: 'https://dev-211305.okta.com' });
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUsernameChange = this.handleUsernameChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+  }
 
-export default class Home extends Component {
-  
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {authenticated: null};
-  //   this.checkAuthentication = this.checkAuthentication.bind(this);
-  //       this.login = this.login.bind(this);
-  //       this.logout = this.logout.bind(this);
-  // }
+  handleSubmit(e) {
+    e.preventDefault();
+    this.oktaAuth.signIn({
+      username: this.state.username,
+      password: this.state.password
+    })
+    .then(res => this.setState({
+      sessionToken: res.sessionToken
+    }))
+    .catch(err => console.log('Found an error', err));
+  }
 
-  // async login() {
-  //   this.props.auth.login('/');
-  // }
- 
-  // async logout() {
-  //   this.props.auth.logout('/');
-  // }
- 
-  // async componentDidMount() {
-  //   this.checkAuthentication();
-  // }
- 
-  // async componentDidUpdate() {
-  //   this.checkAuthentication();
-  // }
+  handleUsernameChange(e) {
+    this.setState({username: e.target.value});
+  }
 
+  handlePasswordChange(e) {
+    this.setState({password: e.target.value});
+  }
 
-  
-render() {
-  return(
-  
-    <div className="Login">
- <Header />
- <Navbar />
+  render() {
+    if (this.state.sessionToken) {
+      this.props.auth.redirect({sessionToken: this.state.sessionToken});
+      return null;
+    }
 
-<a className="waves-effect waves-light btn" href="/auth/google">Google</a>
- 
-    </div>
-    
-  );
-
-};
-};
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Username:
+          <input
+            id="username" type="text"
+            value={this.state.username}
+            onChange={this.handleUsernameChange} />
+          Password:
+          <input
+            id="password" type="password"
+            value={this.state.password}
+            onChange={this.handlePasswordChange} />
+        </label>
+        <input id="submit" type="submit" value="Submit" />
+      </form>
+    );
+  }
+});

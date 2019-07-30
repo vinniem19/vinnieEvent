@@ -8,7 +8,7 @@ function ImgCard(props) {
                 <div className="col s6 m12">
                     <div className="card">
                         <div className="card-image">
-                            <img src={props.image} alt='person'></img>
+                            <img  id='images' src={props.image} alt='person'></img>
                             <span className="card-title">{props.name}</span>
                         </div>
                         <div className="card-content">
