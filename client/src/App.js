@@ -53,7 +53,6 @@ render() {
     client_id='0oawuc9q9FRCUeHFi356'
     redirect_uri={window.location.origin + '/implicit/callback'}
     onAuthRequired={onAuthRequired} >
-    {/* user login */}
       
       <Switch>
       <Route exact path='/' component={Home} />

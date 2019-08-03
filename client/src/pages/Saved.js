@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 // import ImgCard from '../components/ImgCard';
 import Card from '../components/Card';
-import EventList from '../components/EventList';
+import SavedEvents from '../components/savedEvents';
 import API from '../utils/API';
 
 class Saved extends Component {
@@ -34,30 +34,30 @@ class Saved extends Component {
             <div>
                 <Header />
                 <Navbar />
-            <div class='row'>
-                <div class='col-md-12'>
+            <div className='row'>
+                <div className='col-md-12'>
                     <h1>Catholic Events Saved</h1>
                 </div>
                 
             </div>
-            <div class='row'>
-                <div class='col-md-12'>
+            <div className='row'>
+                <div className='col-md-12'>
                   <Card title='Saved Events'>
                       {this.state.events.length ? (
                          
                               this.state.events.map((event => (
-                    <EventList
-                        eventId={event.id}
+                    <SavedEvents
+                        eventId={event.eventId}
                         eventTitle={event.eventTitle}
                         eventImg={event.eventImg}
                         eventStart={event.eventStart}
                         eventEnd={event.eventEnd}
                         eventDescription={event.eventDescription}
-                        key={event.id}
+                        key={event.eventId}
                         Button={() => (
                             <button
-                            onClick={() => this.handleEventDelete(event.id)}
-                            class='btn btn-danger ml-2'
+                            onClick={() => this.handleEventDelete(event.eventId)}
+                            className='waves-effect waves-light btn'
                             >
                                 Delete
                             </button>

@@ -23,7 +23,7 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     remove: function(req, res) {
-        db.Event.findById(req.params.id)
+        db.Event.findOne({ eventId: req.params.id })
         .then(dbEvent => dbEvent.remove())
         .catch(err => res.status(422).json(err));
     }

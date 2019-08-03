@@ -6,3 +6,23 @@
 h1 {
     text-align: center;
 }
+
+#login-btn {
+    height: 40px;
+    width:  90px;
+}
+
+#logout-btn {
+    height: 40px;
+    width:  90px;
+}
+
+#username {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#password {
+    width: 40%;
+    margin: 0 auto;
+}

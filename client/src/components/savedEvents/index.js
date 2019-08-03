@@ -1,13 +1,14 @@
 import React from 'react';
 import './style.css';
-import '../Search';
+
 import '../../pages/Saved.js'
-
-// import retreat from '../../images/retreat.jpg';
-
+import API from '../../utils/API'
+let handleEventDelete = id => {
+ API.deleteEvent(id).then(res => this.getSavedEvents());
+ };
 
 // class Card extends React.Component{
-  function EventList(props) {
+  function SavedEvents(props) {
   
     return(
 <div className="Container">
@@ -17,7 +18,7 @@ import '../../pages/Saved.js'
   <div className="card-body">
     <h5 className="card-title">Title: {props.eventTitle}</h5>
 
-       <button className="waves-effect waves-light btn" id="save-btn" onClick={() => props.handleEventSave(props.eventId)}>Save</button> 
+       <button className="waves-effect waves-light btn" id="del-btn" onClick={() => handleEventDelete(props.eventId)}>Delete</button> 
        
        
         
@@ -32,4 +33,4 @@ import '../../pages/Saved.js'
     
 };
 
-export default EventList;
+export default SavedEvents;

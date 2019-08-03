@@ -54,16 +54,16 @@ render() {
   if (this.state.authenticted === null) return null;
 
   const button = this.state.authenticated ?
-  <button onClick={() => {this.props.auth.logout()}}>Logout</button> :
-  <button onClick={() => {this.props.auth.login()}}>Login</button>;
+  <button id='logout-btn' onClick={() => {this.props.auth.logout()}}>Logout</button> :
+  <button id='login-btn' onClick={() => {this.props.auth.login()}}>Login</button>;
 
   return(
   
     <div>
       <Header />
       <Navbar />
-      <h1>Please press the login button to search Catholic Events.</h1>
       
+      {button}
       {/* <Search /> */}
  
     </div>

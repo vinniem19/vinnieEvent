@@ -1,6 +1,6 @@
 import React from 'react';
-//import Logout from '../Logout/index'
-function Navbar() {
+import '../Home';
+function Navbar(props) {
 
     return (
 <div>
@@ -13,8 +13,8 @@ function Navbar() {
                     <li><a href="/saved">Saved</a></li>
                     <li><a href="/catholicResources">Resources</a></li>
                     <li><a href="/catholicApps">Apps</a></li>
-                    <li><a className="waves-effect waves-light btn" href="/protected">Login</a></li> 
-                    {/*<li>{Logout}</li>*/}
+                    <li>{props.button}</li>
+                    
                 </ul>
         </div>
   </nav>

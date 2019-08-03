@@ -47,13 +47,13 @@ export default class Search extends Component {
     };
 
     handleEventSave = id => {
-        console.log("clicked");
+        
         
         const event = this.state.results.find(event => event.id === id);
         console.log(event);
         
     API.saveEvent({
-                        eventId:event.id,
+                        eventId: event.id,
                         eventTitle: event.name.text,
                         eventImg: (event.logo === null) ? retreat : event.logo.url,
                         eventStart: event.start.local,
