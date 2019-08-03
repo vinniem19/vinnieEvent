@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar';
 import Header from '../Header';
-import '../Events';
 import EventList from '../EventList';
 import retreat from '../../images/retreat.jpg';
 import API from '../../utils/API';

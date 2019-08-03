@@ -43,7 +43,7 @@ render() {
     <div>
       <Header />
       <Navbar />
-      <h1>Press Search on the navigation to begin.</h1>
+      <h1>Press Login or Search on the navigation to begin.</h1>
       {button}
  
     </div>
