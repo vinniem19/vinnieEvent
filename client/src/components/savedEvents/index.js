@@ -3,13 +3,17 @@ import './style.css';
 
 import '../../pages/Saved.js'
 import API from '../../utils/API'
-let handleEventDelete = id => {
- API.deleteEvent(id).then(res => this.getSavedEvents());
- };
+
+
 
 // class Card extends React.Component{
   function SavedEvents(props) {
+    
+    let handleEventDelete = id => {
+     API.deleteEvent(id).then(res => props.getSavedEvents());
+     };
   
+    
     return(
 <div className="Container">
   <div className="row">

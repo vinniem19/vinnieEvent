@@ -1,4 +1,4 @@
-// src/LoginForm.js
+
 
 import React, { Component } from 'react';
 import OktaAuth from '@okta/okta-auth-js';
@@ -48,7 +48,7 @@ export default withAuth(class LoginForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div>
+        <div class='form-input'>
           <label>
             Username:
           </label>
@@ -57,7 +57,7 @@ export default withAuth(class LoginForm extends Component {
             value={this.state.username}
             onChange={this.handleUsernameChange} />
         </div>
-        <div>
+        <div class='form-input'>
           <label>
             Password:
         </label>

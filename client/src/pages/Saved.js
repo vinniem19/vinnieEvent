@@ -7,6 +7,8 @@ import SavedEvents from '../components/savedEvents';
 import API from '../utils/API';
 
 class Saved extends Component {
+    
+    
     state = {
         events: []
     };
@@ -17,10 +19,11 @@ class Saved extends Component {
 
     getSavedEvents = () => {
         API.getSavedEvents()
-        .then(res =>
+        .then(res => {
+            console.log(res);
             this.setState({
                 events: res.data
-            })
+            })}
             ).catch(err => console.log(err));
             console.log(this.state.events)
     };

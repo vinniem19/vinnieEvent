@@ -10,19 +10,22 @@ h1 {
 #login-btn {
     height: 40px;
     width:  90px;
+    background-color: #22958b;
 }
 
 #logout-btn {
     height: 40px;
     width:  90px;
+    background-color: #22958b
 }
 
-#username {
+.form-input {
+    text-align: left;
     width: 40%;
-    margin: 0 auto;
+    margin-left: 5px;
 }
 
-#password {
-    width: 40%;
-    margin: 0 auto;
-}
+
+
+
+

@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   background: #562b00;
-  /*color: white;*/
 }
 
 .card-body {
@@ -13,7 +12,9 @@ h1 {
   color: white;
 }
 
-
+h2 {
+  color: white;
+}
 
 
 

@@ -20,4 +20,3 @@ class Logout extends Component {
 };
 
 export default withAuth(Logout);
-// withAuth() makes Okta "Auth" object available as "this.props.auth"

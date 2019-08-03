@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
-// import Search from '../components/Search';
 import { withAuth } from '@okta/okta-react';
-// import { Link } from 'react-router-dom';
-// import { throws } from 'assert';
 import './style.css'
 
 
@@ -17,8 +14,7 @@ export default withAuth(class Home extends Component {
     this.state = {authenticated: null};
     this.checkAuthentication = this.checkAuthentication.bind(this);
     this.checkAuthentication();    
-        // this.login = this.login.bind(this);
-        // this.logout = this.logout.bind(this);
+       
   }
 
   async checkAuthentication() {
@@ -31,21 +27,6 @@ export default withAuth(class Home extends Component {
   componentDidUpdate() {
     this.checkAuthentication();
   }
-  // async login() {
-  //   this.props.auth.login('/');
-  // }
- 
-  // async logout() {
-  //   this.props.auth.logout('/');
-  // }
- 
-  // async componentDidMount() {
-  //   this.checkAuthentication();
-  // }
- 
-  // async componentDidUpdate() {
-  //   this.checkAuthentication();
-  // }
 
 
   
@@ -62,9 +43,8 @@ render() {
     <div>
       <Header />
       <Navbar />
-      
+      <h1>Press Search on the navigation to begin.</h1>
       {button}
-      {/* <Search /> */}
  
     </div>
     

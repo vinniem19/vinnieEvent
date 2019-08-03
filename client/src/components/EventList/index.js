@@ -3,10 +3,6 @@ import './style.css';
 import '../Search';
 import '../../pages/Saved.js'
 
-// import retreat from '../../images/retreat.jpg';
-
-
-// class Card extends React.Component{
   function EventList(props) {
   
     return(
@@ -19,8 +15,6 @@ import '../../pages/Saved.js'
 
        <button className="waves-effect waves-light btn" id="save-btn" onClick={() => props.handleEventSave(props.eventId)}>Save</button> 
        
-       
-        
     <p className="card-text">Start time: {props.eventStart}</p>
     <p className="card-text">End time: {props.eventEnd}</p>
     <p className="card-text">Description: {props.eventDescription}</p>

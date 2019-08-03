@@ -6,10 +6,9 @@ function Navbar(props) {
 <div>
     <nav>
         <div className=" amber nav-wrapper">
-            {/* <a href="/" className="brand-logo">CEO</a> */}
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/search">Search</a></li>
+                    <li><a href="/protected">Search</a></li>
                     <li><a href="/saved">Saved</a></li>
                     <li><a href="/catholicResources">Resources</a></li>
                     <li><a href="/catholicApps">Apps</a></li>
