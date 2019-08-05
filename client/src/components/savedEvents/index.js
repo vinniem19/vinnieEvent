@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
-
 import '../../pages/Saved.js'
 import API from '../../utils/API'
-
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 // class Card extends React.Component{
@@ -25,9 +25,9 @@ import API from '../../utils/API'
        <button className="waves-effect waves-light btn" id="del-btn" onClick={() => handleEventDelete(props.eventId)}>Delete</button> 
        
        
-        
-    <p className="card-text">Start time: {props.eventStart}</p>
-    <p className="card-text">End time: {props.eventEnd}</p>
+    <p className="card-text">Date: <Moment format='ddd MM/DD/YYYY'>{props.eventStart}</Moment></p>
+    <p className="card-text">Start time: <Moment format='hh:mm a'>{props.eventStart}</Moment></p>
+    <p className="card-text">End time: <Moment format='hh:mm a'>{props.eventEnd}</Moment></p>
     <p className="card-text">Description: {props.eventDescription}</p>
   </div>
 </div>

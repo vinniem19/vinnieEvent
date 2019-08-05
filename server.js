@@ -1,8 +1,7 @@
 const express = require("express");
 require('dotenv').config();
 const mongoose = require("mongoose");
-// do I need to put routes here? I dont have that set up, yet.
- const routes = require("./routes");
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -15,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-// again, probably should include this here
+// telling middleware to use routes folder
  app.use(routes);
 
 // Connecting to MongoDB

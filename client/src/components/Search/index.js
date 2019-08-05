@@ -4,6 +4,7 @@ import Header from '../Header';
 import EventList from '../EventList';
 import retreat from '../../images/retreat.jpg';
 import API from '../../utils/API';
+// var moment = require('moment');
 
 export default class Search extends Component {
 
@@ -59,6 +60,7 @@ export default class Search extends Component {
                         eventEnd: event.end.local,
                         eventDescription: event.description.text
             }).then(() => this.getEvents());
+
     };
 
 
