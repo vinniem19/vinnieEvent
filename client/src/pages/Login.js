@@ -13,7 +13,7 @@ export default withAuth(class LoginForm extends Component {
       password: ''
     }
 
-    this.oktaAuth = new OktaAuth({ url: 'https://dev-211305.okta.com' });
+    this.oktaAuth = new OktaAuth({ url: 'https://dev-169978.okta.com' });
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
