@@ -5,8 +5,6 @@ export default {
     // Getting events from EventBrite api
 
     getEvents: function(q) {
-    //     return axios.get(`https://www.eventbriteapi.com/v3/events/search/?q=catholic&location.address=${q}&location.within=90mi&expand=event.venue.name&token=${key}`)
-    // },
      return axios.get('/api/ebapi', {params: {q} });
     },
     

@@ -100,6 +100,7 @@ export default class Search extends Component {
                         eventStart={event.start.local}
                         eventEnd={event.end.local}
                         eventDescription={event.description.text}
+                        eventPlace={event.venue_id}
                         key={event.id}
                         handleEventSave={this.handleEventSave}
                         

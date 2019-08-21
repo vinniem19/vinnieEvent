@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background: #562b00;
+  min-height: 700px;
 }
 
 .card-body {

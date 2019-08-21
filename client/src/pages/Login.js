@@ -48,7 +48,7 @@ export default withAuth(class LoginForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div class='form-input'>
+        <div className='form-input'>
           <label>
             Username:
           </label>
@@ -57,7 +57,7 @@ export default withAuth(class LoginForm extends Component {
             value={this.state.username}
             onChange={this.handleUsernameChange} />
         </div>
-        <div class='form-input'>
+        <div className='form-input'>
           <label>
             Password:
         </label>

@@ -49,15 +49,15 @@ render() {
   return(
   <Router>
     <div className="App">
-    <Security issuer='https://dev-211305.okta.com/oauth2/default'
-    client_id='0oawuc9q9FRCUeHFi356'
+    <Security issuer='https://dev-169978.okta.com/oauth2/default'
+    client_id='0oa13oike68NVDIRD357'
     redirect_uri={window.location.origin + '/implicit/callback'}
     onAuthRequired={onAuthRequired} >
       
       <Switch>
       <Route exact path='/' component={Home} />
       <SecureRoute path='/protected' component={Protected} />
-      <Route path='/login' render={() => <Login baseUrl='https://dev-211305.okta.com}' /> } />      {/* <Route exact path='/login' component={Login} /> */}
+      <Route path='/login' render={() => <Login baseUrl='https://dev-211305.okta.com}' /> } />      
       <Route path='/implicit/callback' component={ImplicitCallback} />
       <Route exact path='/search' component={Search} />
       <Route exact path='/saved' component={Saved} />

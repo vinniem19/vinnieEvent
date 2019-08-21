@@ -21,6 +21,7 @@ import 'moment-timezone';
     <p className="card-text">Start time: <Moment format='hh:mm a'>{props.eventStart}</Moment></p>
     <p className="card-text">End time: <Moment format='hh:mm a'>{props.eventEnd}</Moment></p>
     <p className="card-text">Description: {props.eventDescription}</p>
+    <p className="card-text">Place Id: {props.eventPlace}</p>
   </div>
 </div>
 </div>
