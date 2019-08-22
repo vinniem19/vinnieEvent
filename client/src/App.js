@@ -57,7 +57,7 @@ render() {
       <Switch>
       <Route exact path='/' component={Home} />
       <SecureRoute path='/protected' component={Protected} />
-      <Route path='/login' render={() => <Login baseUrl='https://dev-211305.okta.com}' /> } />      
+      <Route path='/login' render={() => <Login baseUrl='https://dev-169978.okta.com}' /> } />      
       <Route path='/implicit/callback' component={ImplicitCallback} />
       <Route exact path='/search' component={Search} />
       <Route exact path='/saved' component={Saved} />
