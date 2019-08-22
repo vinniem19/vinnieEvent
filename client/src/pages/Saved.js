@@ -56,6 +56,7 @@ class Saved extends Component {
                         eventStart={event.eventStart}
                         eventEnd={event.eventEnd}
                         eventDescription={event.eventDescription}
+                        eventPlace={event.eventPlace}
                         key={event.eventId}
                         Button={() => (
                             <button

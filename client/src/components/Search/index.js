@@ -58,7 +58,8 @@ export default class Search extends Component {
                         eventImg: (event.logo === null) ? retreat : event.logo.url,
                         eventStart: event.start.local,
                         eventEnd: event.end.local,
-                        eventDescription: event.description.text
+                        eventDescription: event.description.text,
+                        eventPlace: event.venue_id
             }).then(() => this.getEvents());
 
     };

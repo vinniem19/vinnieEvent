@@ -8,7 +8,7 @@ const eventSchema = new Schema({
     eventStart: { type: Date, default: Date.now},
     eventEnd: { type: Date, default: Date.now},
     eventDescription: { type: String},
-    
+    eventPlace: {type: String} 
     //eventPrice: { type: Number}
 });
 
