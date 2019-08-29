@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connecting to MongoDB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://Vmiller19:Hello2019@ds211718.mlab.com:11718/heroku_0nm5sktp", { useNewUrlParser: true } )
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/vceoevents", { useNewUrlParser: true } )
 
 // start API server
 app.listen(PORT, function() {
