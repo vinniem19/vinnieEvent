@@ -43,7 +43,7 @@ class Saved extends Component {
                 </div>
                 
             </div>
-            <div className='row'>
+            <div className='row card-body'>
                 <div className='col-md-12'>
                   <Card title='Saved Events'>
                       {this.state.events.length ? (
