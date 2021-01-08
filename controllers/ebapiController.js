@@ -36,7 +36,7 @@ module.exports = {
                 result.description.text &&
                 result.venue_id
                 )
-        }).
+                }).
                 then(events => res.json(events))
                 .catch(err => res.status(422).json(err));
                 

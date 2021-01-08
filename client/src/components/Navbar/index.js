@@ -15,6 +15,7 @@ function Navbar(props) {
                     <li>{props.button}</li>
                     
                 </ul>
+                
         </div>
   </nav>
 
